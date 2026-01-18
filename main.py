@@ -4,8 +4,13 @@ ATBASH = {'A':'Z', 'B':'Y', 'C':'X', 'D':'W', 'E':'V', 'F':'U', 'G':'T', 'H':'S'
 def encode(message):
     cipher = ''
     for letter in message:
-        cipher += ATBASH[letter]
+        if letter == ' ':
+            cipher += ' '
+        else:
+            cipher += ATBASH[letter]
 
     return cipher
 
-print(encode('HELLO'))
+answer = str(input('what message would you like to encode?'))
+message = answer.upper()
+print(encode(message))
