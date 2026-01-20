@@ -1,8 +1,8 @@
-message = str(input('what message would you like to encode?')).upper()
+message = str(input('What message would you like to encode?')).upper()
 validCipher = False
 
 while validCipher == False:
-    cipherType = str(input("What Cipher would you like to use?(Atbash)")).upper()
+    cipherType = str(input("What Cipher would you like to use?(ATBASH or CA)")).upper()
     
     if cipherType == 'ATBASH':
         validCipher = True
