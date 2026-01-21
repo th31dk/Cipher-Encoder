@@ -10,8 +10,8 @@ while validCipher == False:
                 'N':'M', 'O':'L', 'P':'K', 'Q':'J', 'R':'I', 'S':'H', 'T':'G', 'U':'F', 'V':'E', 'W':'D', 'X':'C', 'Y':'B', 'Z':'A'}
         def ATBASHencode(message):
             cipher = ''
-            for letter in message:
-                if letter == ' ':
+            for character in message:
+                if character == ' ':
                     cipher += ' '
                 else:
                     cipher += ATBASH[letter]
@@ -28,6 +28,15 @@ while validCipher == False:
             cipher = message.translate(encode)
             return cipher
         encodedMessage = CAESARencode(message)
+
+    elif cipherType == "BINARY":
+        validCipher = True
+        def BINARYencode(message):
+            cipher = ''
+            for character in message:
+                cipher += ord(character)
+       
+        encodedMessage = BINARYencode(message)
 
 
     else:
