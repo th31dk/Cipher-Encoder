@@ -2,7 +2,7 @@ message = str(input('What message would you like to encode?')).upper()
 validCipher = False
 
 while validCipher == False:
-    cipherType = str(input("What Cipher would you like to use?(ATBASH or CAESAR)")).upper()
+    cipherType = str(input("What Cipher would you like to use?")).upper()
     
     if cipherType == "ATBASH":
         validCipher = True
@@ -14,7 +14,7 @@ while validCipher == False:
                 if character == ' ':
                     cipher += ' '
                 else:
-                    cipher += ATBASH[letter]
+                    cipher += ATBASH[character]
             return cipher
         encodedMessage = ATBASHencode(message)
 
@@ -34,7 +34,10 @@ while validCipher == False:
         def BINARYencode(message):
             cipher = ''
             for character in message:
-                cipher += ord(character)
+                cipher += str(bin((ord(character))))[2:]
+            return cipher
+        encodedMessage = BINARYencode(message)
+            
        
         encodedMessage = BINARYencode(message)
 
