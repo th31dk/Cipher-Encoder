@@ -43,20 +43,28 @@ while validCipher == False:
         alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
         alphabetValues = {'A' : 1, 'B' : 2, 'C' : 3, 'D' : 4, 'E' : 5, 'F' : 6, 'G' : 7, 'H' : 8, 'I' : 9, 'J' : 10, 'K' : 11, 'L' : 12, 'M' : 13,
                           'N' : 14, 'O' : 15, 'P' : 16, 'Q' : 17, 'R' : 18, 'S' : 19, 'T' : 20, 'U' : 21, 'V' : 22, 'W' : 23,'X' : 24,'Y' : 25, 'Z' : 26}
+        
         def VIGENEREencode(message):
             cipherKey = input("What keyword would you like to use?").upper()
-            keywordLength = 0
+            cipher = ''
+            keyIndex = 0
 
-            for characters in cipherKey:
-            keywordLength += 1
+            for character in message:
+                if character == ' ':
+                    cipher += ' '
+                else:
+                    shift = alphabetValues[cipherKey[keyIndex % len(cipherKey)]] - 1
 
-            for characters in message:
-                characterNumber = -1
-                characterNumber += 1 % keywordLength
-                caesar = alphabet[keywordLength:] + alphabet[:keywordLength]
-                encode = str.maketrans(alphabet, caesar)
-                cipher = message.translate(encode)
-                return cipher
+                    position = alphabetValues[character] - 1
+                    newPosition = (position +shift) % 26
+
+                    cipher += alphabet[newPosition]
+
+                    keyIndex += 1
+                keyIndex += 1
+
+            return cipher
+        
         encodedMessage = VIGENEREencode(message)
 
     else:
