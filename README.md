@@ -4,4 +4,9 @@ This is a small python project that will allow you to encrypt your messages with
 ## Supported Encryption Methods
 - Atbash Cipher
 - Caesar Cipher
+- Vigenere Cipher
 - Binary
+
+## Future Goals
+- Add decoding
+- Add DNA encoding/decoding

@@ -60,7 +60,6 @@ while validCipher == False:
 
                     cipher += alphabet[newPosition]
 
-                    keyIndex += 1
                 keyIndex += 1
 
             return cipher
