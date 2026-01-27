@@ -9,4 +9,3 @@ This is a small python project that will allow you to encrypt your messages with
 
 ## Future Goals
 - Add decoding
-- Add DNA encoding/decoding
