@@ -74,9 +74,16 @@ while goodanswer == False:
             else:
                 print('INVALID CIPHER TYPE, PLEASE TRY AGAIN')
 
-        print('ENCODED MESSAGE:')
+        print("ENCODED MESSAGE:")
         print(encodedMessage)
     elif encodeordecode == "DECODE":
-        print("FEATURE HAS NOT BEEN ADDED YET")
+        validCipher = False
+        while validCipher == False:
+            print("ONLY ATBASH DECODING IS AVAILABLE")
+            cipherType = input("What cipher is the encoded message in?").upper
+            if cipherType == "ATBASH":
+                validCipher == True
+            else:
+                print("INVALID CIPHER, PLEASE TRY AGAIN")
     else:
         print("INVALID OPTION, PLEASE TRY AGAIN")
