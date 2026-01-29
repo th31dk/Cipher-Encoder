@@ -86,12 +86,15 @@ while goodanswer == False:
         print("ENCODED MESSAGE:")
         print(encodedMessage)
     elif encodeordecode == "DECODE":
+        message = input("What message would you like to decode?")
         validCipher = False
         while validCipher == False:
             print("ONLY ATBASH DECODING IS AVAILABLE")
             cipherType = input("What cipher is the encoded message in?").upper
             if cipherType == "ATBASH":
                 validCipher == True
+                ATBASH(message)
+
             else:
                 print("INVALID CIPHER, PLEASE TRY AGAIN")
     else:
