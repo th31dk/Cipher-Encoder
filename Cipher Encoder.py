@@ -22,8 +22,32 @@ def CAESARencode(message):
     return cipher
 
 # BINARY
+def BINARYencode(message):
+                    cipher = ''
+                    for character in message:
+                        cipher += str(bin((ord(character))))[2:]
+                    return cipher
 
 # VIGENERE
+def VIGENEREencode(message):
+    cipherKey = input("What keyword would you like to use?").upper()
+    cipher = ''
+    keyIndex = 0
+
+    for character in message:
+        if character == ' ':
+            cipher += ' '
+        else:
+            shift = alphabetValues[cipherKey[keyIndex % len(cipherKey)]] - 1
+
+            position = alphabetValues[character] - 1
+            newPosition = (position +shift) % 26
+
+            cipher += alphabet[newPosition]
+
+        keyIndex += 1
+
+        return cipher
 
 goodanswer = False
 while goodanswer == False:
@@ -46,11 +70,6 @@ while goodanswer == False:
 
             elif cipherType == "BINARY":
                 validCipher = True
-                def BINARYencode(message):
-                    cipher = ''
-                    for character in message:
-                        cipher += str(bin((ord(character))))[2:]
-                    return cipher
                 encodedMessage = BINARYencode(message)
 
             elif cipherType == "VIGENERE":
