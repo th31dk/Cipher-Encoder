@@ -47,7 +47,7 @@ def VIGENEREencode(message):
 
             cipher += alphabet[newPosition]
 
-        keyIndex += 1
+            keyIndex += 1
 
     return cipher
 
@@ -79,7 +79,7 @@ while goodanswer == False:
                 encodedMessage = VIGENEREencode(message)
 
             else:
-                print('INVALID CIPHER TYPE, PLEASE TRY AGAIN')
+                print('INVALID CIPHER, PLEASE TRY AGAIN')
 
         print("ENCODED MESSAGE:")
         print(encodedMessage)
